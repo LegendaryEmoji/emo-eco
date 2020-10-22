@@ -49,58 +49,6 @@ module.exports = {
 
         return Data;
     },
-    CoolDownCheck: async function (UserID, Default, Line, Db) {
-        if (!UserID) throw new Error(`Please Give ID Of User!`);
-        if (!Db) throw new Error(`Please Give Your Database Variable!`);
-        if (!Default) throw new Error(`Please Give Your Default Time In Ms!`);
-        if (isNaN(Default)) throw new Error(`Please Give Valid Default Time In Ms!`);
-        if (!Line) throw new Error(`Please Give Your Database Line!`);
-
-        let db = Db;
-
-        let Data = await db.fetch(`${Line}_${UserID}`);
-
-        if (Data.CoolDown && Data.CoolDown === true) {
-            let Cooldowned = {
-                UserID: UserID,
-                CoolDown: true,
-                CoolDownDate: (Default - (Date.now() - Data.CoolDownTime)).toDateString(),
-                CoolDownTime: (Default - (Date.now() - Data.CoolDownTime)).toTimeString(),
-                Date: new Date().toDateString(),
-                Time: new Date().toTimeString(),
-                TimeStamp: new Date()
-            };
-            
-            return Cooldowned;
-        };
-
-        let Checked = {
-            UserID: UserID,
-            CoolDown: false,
-            Date: new Date().toDateString(),
-            Time: new Date().toTimeString(),
-            TimeStamp: new Date()
-        };
-
-        return Checked;
-
-        /*
-            let Seted = {
-            UserID: UserID,
-            CoolDown: true,
-            CoolDownTime: new Date(),
-            Date: new Date().toDateString(),
-            Time: new Date().toTimeString(),
-            TimeStamp: new Date()
-        };
-
-        await db.set(`${Line}_${UserID}`, Seted);
-
-        setTimeout(async () => {
-            await db.set(`${Line}_${UserID}`, null);
-        }, 86400000);
-        */
-    },
     RandomNumber: async function (Amount) {
         if (!Amount) throw new Error(`Please Give Amount!`);
         if (isNaN(Amount)) throw new Error(`Please Give A Valid Amount!`);
