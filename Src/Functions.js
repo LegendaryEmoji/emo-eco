@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = { //By a dickless person
     IDCheck: async function (ID, Type) {
         if (!ID) throw new Error(`Please Give ID That You Want To Check!`);
         if (isNaN(ID)) throw new Error(`Please Give Valid ${Type} ID!`);
@@ -29,6 +29,20 @@ module.exports = {
 
         return Data;
     },
+    MoneyChecker: async function(Amount, Type) {
+        if (!Amount) throw new Error(`Please Give Amount!`);
+        if (!Type) throw new Error(`Please Give Type - OldMoney, NewMoney`)
+        if (isNaN(Amount)) throw new Error(`Invalid ${Type} - Data Is Not Number, Clear Database Eco Data!`);
+
+        let Data = {
+            Type: "Amount",
+            Response: "String",
+            Amount: Amount,
+            Done: true
+        };
+
+        return Data;
+    },
     GetMoney: async function (GuildID, UserID, Db) {
         if (!GuildID) throw new Error(`Please Give ID Of Guild!`);
         if (isNaN(GuildID)) throw new Error(`Please Give Valid Guild ID!`);
@@ -39,6 +53,7 @@ module.exports = {
         if (!Db) throw new Error(`Please Give Your Database Variable!`);
 
         let Money = await Db.fetch(`Eco_${GuildID}_${UserID}`);
+        if (isNaN(Money)) throw new Error(`Invalid Type - Data Is Not Number, Clear Database Eco Data!`)
 
         let Data = {
             Type: "Money",
@@ -49,10 +64,12 @@ module.exports = {
 
         return Data;
     },
-    RandomNumber: async function (Amount) {
+    RandomNumber: async function (Amount, Amount2) {
         if (!Amount) throw new Error(`Please Give Amount!`);
         if (isNaN(Amount)) throw new Error(`Please Give A Valid Amount!`);
+        if (!Amount2) return Math.floor(Math.random() * Amount);
+        if (isNaN(Amount2)) throw new Error(`Please Give A Valid Amount2!`);
 
-        return Math.floor(Math.random() * Amount);
+        return Math.floor(Math.random() * (Amount - Amount2)) + Amount;
     }
 };
