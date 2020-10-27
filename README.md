@@ -1,85 +1,57 @@
-### Emo Eco
+# Emo Eco 😁
 
-- This Package Is Under Development!
-- This Package Is Mainly For Discord Bots (Discord.js)
-- Make Sure To Install Wio.db Before Using Package!
-- Stable Verison : Not Released
-- Full : Emoji Economy
+- _**Make Sure To Install [Wio.db](https://www.npmjs.com/package/wio.db) Before Using Package!**_
+- _This Package Is For Discord Bots (Mainly [Discord.js](https://www.npmjs.com/package/discord.js))_
+- _Full : Emoji Economy_
+- Report Bugs, Errors, Problems In [Support Server](https://discord.gg/kG2WAUT)
+- Stable Version : [Current Version](https://www.npmjs.com/package/emo-eco)
 
-# Usage
+## Usage 📕
 ```js
+//Discord.js - discord.js.org
 const Discord = require("discord.js");
 const Emo = require("emo-eco");
 const client = new Discord.Client();
 
 client.on("ready", () => {
-    console.log("Bot Is Ready With Emo-Eco!");
+    console.log("Bot Is Ready With Emo-Eco 💖!");
 });
 
 client.on("message", async message => {
-    if (message.content.toLowerCase() === "balance") {
-        let Data = await Emo.Balance(message.guild.id, message.author.id);
-        return message.channel.send(Data.Money);
-    }
+    if (message.content.toLowerCase() === "work") {
+        let Data = await Emo.Work(message.guild.id, message.author.id);
+        return message.channel.send(Data.Line);
+    };
 });
 
 client.login("Put Your Epic Bot Token Here!");
 ```
 ![](https://cdn.discordapp.com/attachments/768551581972299816/768552463951200256/unknown.png)
 
-# Why Emo-Eco?
+## Why Emo-Eco ❓
 
 - Fast & Easy To Use
-- Stores Data In Json File
-- Support
+- Stores Data In Json File ([Wio.db](https://www.npmjs.com/package/wio.db))
+- Many Functions (12+)
+- Mainly For [Discord.js](https://www.npmjs.com/package/discord.js) Bots
+- [Support 69/69](https://discord.gg/kG2WAUT)
 
- Documentation
+## Documentation 📖
 
 - All Functions Return Data As Objects (.<Thing>)
 
-**Daily(GuildID, UserID):** Daily | Add Money To The User (1000, NO COOLDOWN)!
+- Link => Scroll Down Or [Click Me (Recommended)](https://bit.ly/34tvqau)
 
-Response :
-GuildID, UserID, AddedMoney, OldMoney, NewMoney, TimeStamp
+# More 😉
 
-**SetMoney(GuildID, UserID, Amount):** SetMoney | Set The Money Of User!
+_Note : This Package Is Using [Wio.db](https://www.npmjs.com/package/wio.db) (Database)_
 
-Response :
-GuildID, UserID, SettedMoney, OldMoney, NewMoney, TimeStamp
-
-**AddMoney(GuildID, UserID, Amount):** AddMoney | Add Money To The User!
-
-Response :
-GuildID, UserID, AddedMoney, OldMoney, NewMoney, TimeStamp
-
-**RemoveMoney(GuildID, UserID, Amount):** RemoveMoney | Remove Money To The User!
-
-Response :
-GuildID, UserID, RemovedMoney, OldMoney, NewMoney, TimeStamp
-
-**Balance(GuildID, UserID):** Balance | Show Money Of User!
-
-Response :
-GuildID, UserID, Money, TimeStamp
-
-**GetMoney(GuildID, UserID):** GetMoney | Show Money Of User!
-
-Response :
-GuildID, UserID, Money, TimeStamp
-
-**Work(GuildID, UserID, Currency, SpaceInCurrency):** Work | Work & Get Paid (NO COOLDOWN)!
-
-Response :
-GuildID, UserID, AddedMoney, OldMoney, NewMoney, Work, Job, Line, TimeStamp
-
-# More!
-
-_Note: This Package Is Using Many Websites For Getting Stuff, Thanks To Websites Owners_
-
-- This Package Is Made With 💖 By Emoji
+- This Package Is Made With 💖 By Legendary Emoji#1742
 
 - Donations Will Help Us To Maintain This Package
 
-- Thank You For Reading & Using This Package ;)
+- Documentation => [Click Me](https://github.com/LegendaryEmoji/emo-eco/wiki)
+
+- Support Server => [Click Me](https://discord.gg/kG2WAUT)
 
 - Patreon (Legendary Emoji) => [Click Me](https://www.patreon.com/LegendaryEmoji)
