@@ -1,6 +1,6 @@
 {
   "name": "emo-eco",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Emoji Economy For Discord Bots!",
   "main": "emo-eco.js",
   "scripts": {
@@ -13,6 +13,7 @@
   },
   "keywords": [
     "Discord.js",
+    "Eco",
     "Economy"
   ],
   "author": "Legendary Emoji#1742",
@@ -22,7 +23,6 @@
   },
   "homepage": "https://github.com/LegendaryEmoji/emo-eco#readme",
   "dependencies": {
-    "pretty-ms": "^7.0.1",
     "wio.db": "^4.0.9"
   }
 }
