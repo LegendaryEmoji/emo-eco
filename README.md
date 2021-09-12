@@ -1,3 +1,7 @@
+# Note
+
+- This project is archived by its creator & read-only now!
+
 # Emo Eco 😁
 
 - _**Make Sure To Install [Wio.db](https://www.npmjs.com/package/wio.db) Before Using Package!**_
